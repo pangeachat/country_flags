@@ -431,4 +431,10 @@ class FlagCode {
 
   /// Returns a list of all available flag codes.
   static Set<String> get flagValues => Set.unmodifiable(_flagValues);
+
+  /// Get all flag codes for a given language code.
+  static List<String> allCodesForLang(String langCode) =>
+      _flagCodesLanguages.keys
+          .where((key) => key.startsWith(langCode.toLowerCase()))
+          .toList();
 }
